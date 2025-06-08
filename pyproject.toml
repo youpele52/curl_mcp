@@ -1,0 +1,7 @@
+[project]
+name = "curl-mcp"
+version = "0.1.0"
+description = "curl MCP"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
