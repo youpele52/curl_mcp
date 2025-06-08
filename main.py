@@ -3,6 +3,7 @@ import json
 import subprocess
 import shlex
 
+PORT = 8888
 
 class CurlMCPHandler(BaseHTTPRequestHandler):
     def do_POST(self):
@@ -39,7 +40,7 @@ class CurlMCPHandler(BaseHTTPRequestHandler):
             self.send_error(500, f"Error executing curl: {str(e)}")
 
 
-def run(server_class=HTTPServer, handler_class=CurlMCPHandler, port=8812):
+def run(server_class=HTTPServer, handler_class=CurlMCPHandler, port=PORT):
     server_address = ("", port)
     httpd = server_class(server_address, handler_class)
     print(f"Starting curl MCP server on port {port}...")
